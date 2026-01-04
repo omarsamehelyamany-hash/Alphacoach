@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite AI Performance Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Elite AI Performance Suite</h1>
+        <nav>
+            <button onclick="showTab('dashboard')">Dashboard</button>
+            <button onclick="showTab('performance')">Performance Log</button>
+            <button onclick="showTab('nutrition')">Fuel Strategy</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Tab -->
+        <section id="dashboard" class="tab">
+            <div class="metrics">
+                <div class="card">
+                    <h3>Total Volume</h3>
+                    <p id="totalVolume">0 kg</p>
+                </div>
+                <div class="card">
+                    <h3>Intensity</h3>
+                    <p id="intensity">0/10</p>
+                </div>
+                <div class="card">
+                    <h3>Compliance</h3>
+                    <p id="compliance">0%</p>
+                </div>
+            </div>
+            <canvas id="weeklyChart"></canvas>
+        </section>
+
+        <!-- Performance Log Tab -->
+        <section id="performance" class="tab hidden">
+            <form id="logForm">
+                <label>Split:
+                    <select id="splitSelect">
+                        <option>Chest & Back</option>
+                        <option>Shoulders & Arms</option>
+                        <option>Legs</option>
+                    </select>
+                </label>
+                <label>Exercise:
+                    <select id="exerciseSelect"></select>
+                </label>
+                <label>Sets: <input type="number" id="sets" min="1" value="3"></label>
+                <label>Reps: <input type="number" id="reps" min="1" value="10"></label>
+                <label>Weight (kg): <input type="number" id="weight" min="1" value="50"></label>
+                <button type="submit">Log Lift</button>
+            </form>
+            <table id="workoutTable">
+                <thead>
+                    <tr><th>Date</th><th>Exercise</th><th>Volume (kg)</th><th>1RM (kg)</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Nutrition Tab -->
+        <section id="nutrition" class="tab hidden">
+            <form id="nutritionForm">
+                <label>Weight (kg): <input type="number" id="nutriWeight" value="85"></label>
+                <label>Body Fat %: <input type="number" id="bodyFat" value="15"></label>
+                <label>Activity Level (1-5): <input type="number" id="activity" min="1" max="5" value="4"></label>
+                <label>Goal:
+                    <select id="goalSelect">
+                        <option>Rapid Cut</option>
+                        <option>Aggressive Bulk</option>
+                        <option>Lean Bulk</option>
+                        <option>Recomposition</option>
+                    </select>
+                </label>
+                <button type="submit">Calculate Strategy</button>
+            </form>
+            <div id="nutritionResults">Awaiting input...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

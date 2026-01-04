@@ -1,0 +1,43 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0D1117;
+    color: #F0F6FC;
+}
+header {
+    background-color: #161B22;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: #00E676;
+    color: #0D1117;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+nav button:hover {opacity:0.8;}
+main {padding: 20px;}
+.tab {display:block;}
+.hidden {display:none;}
+.card {
+    background-color: #161B22;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    display:inline-block;
+    width: 200px;
+    text-align:center;
+}
+form {margin-bottom:20px;}
+form label {display:block;margin:10px 0;}
+input, select, button {padding:8px;margin-top:5px;width:100%;}
+table {width:100%;border-collapse:collapse;margin-top:20px;}
+table, th, td {border:1px solid #30363D;}
+th, td {padding:8px;text-align:center;}
+canvas {background-color:#161B22;margin-top:20px;border-radius:8px;}
